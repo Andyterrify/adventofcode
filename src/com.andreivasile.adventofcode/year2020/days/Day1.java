@@ -1,17 +1,26 @@
 package com.andreivasile.adventofcode.year2020.days;
 
 import com.andreivasile.adventofcode.common.AdventInputFile;
+import com.andreivasile.adventofcode.common.Day;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
-public class Day1 {
-    public static final int day = 1;
-    public static final int year = 2020;
+/**
+ * The type Day 1.
+ */
+public class Day1 extends Day {
 
-    public static String partOne() {
+    /**
+     * Instantiates a new Day 1.
+     */
+    public Day1() {
+        super(1, 2020);
+    }
+
+    public String partOne() {
         Integer[] numbers = AdventInputFile.getInputAsIntList(day);
         List<Integer> nums = Arrays.stream(numbers).collect(Collectors.toList());
 
@@ -22,7 +31,7 @@ public class Day1 {
         return String.valueOf(output.get());
     }
 
-    public static String partTwo() {
+    public String partTwo() {
         Integer[] numbers = AdventInputFile.getInputAsIntList(day);
         List<Integer> nums = Arrays.stream(numbers).collect(Collectors.toList());
 
@@ -31,10 +40,5 @@ public class Day1 {
         nums.forEach(
                 i -> nums.forEach(j -> nums.stream().parallel().filter(k -> i + j + k == 2020).findAny().ifPresent(k -> output.set(i * j * k))));
         return String.valueOf(output.get());
-    }
-
-    public static void printParts() {
-        System.out.printf("The output for Day %d Part %d is: %s\n", day, 1, partOne());
-        System.out.printf("The output for Day %d Part %d is: %s\n", day, 2, partTwo());
     }
 }

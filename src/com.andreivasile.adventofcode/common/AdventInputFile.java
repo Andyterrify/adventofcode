@@ -12,14 +12,30 @@ import java.util.Objects;
 /**
  * The Advent of Code input file grabber
  */
-
 public abstract class AdventInputFile {
 
+    /**
+     * Gets InputStream from local source if it exists
+     * If it cannot find the given file then it will throw IOException
+     *
+     * @param day to catch
+     * @return InputStream containing the file
+     * @throws IOException If the file is not found at source the error is thrown
+     */
     private static InputStream getInputStreamLocal(int day) throws IOException {
         Path fileName = Path.of(System.getProperty("user.dir") + "/days/day" + day + ".txt");
-        return new BufferedInputStream(new FileInputStream(fileName.toString()));
+//        return new BufferedInputStream(new FileInputStream(fileName.toString()));
+        return new FileInputStream(fileName.toString());
     }
 
+    /**
+     * Gets InputStream from external source at https://adventofcode.com/2020/day/<DAY>/input
+     * If it cannot find the given file then it will throw IOException
+     *
+     * @param day to catch
+     * @return InputStream containing the file
+     * @throws IOException If the file is not found at source the error is thrown
+     */
     private static InputStream getInputStreamExternal(int day) throws IOException {
         String session = getSessionID();
         URL url = new URL(String.format("https://adventofcode.com/2020/day/%d/input", day));
@@ -30,6 +46,12 @@ public abstract class AdventInputFile {
         return connection.getInputStream();
     }
 
+    /**
+     * Gets input stream.
+     *
+     * @param day the day
+     * @return the input stream
+     */
     public static InputStream getInputStream(int day) {
         InputStream inputStream;
         try {
@@ -46,13 +68,25 @@ public abstract class AdventInputFile {
         return inputStream;
     }
 
-    public static void saveInputFile(int day) throws IOException {
+    /**
+     * Save input file.
+     *
+     * @param day the day
+     * @throws IOException the io exception
+     */
+    private static void saveInputFile(int day) throws IOException {
         InputStream inputStream = getInputStreamExternal(day);
 
         Path filePath = Path.of(System.getProperty("user.dir") + "/days/day" + day + ".txt");
         Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
     }
 
+    /**
+     * Get input as string list string [ ].
+     *
+     * @param day the day
+     * @return the string [ ]
+     */
     public static String[] getInputAsStringList(int day) {
         InputStream inputStream = getInputStream(day);
         ArrayList<String> lines = new ArrayList<>();
@@ -70,6 +104,12 @@ public abstract class AdventInputFile {
         return lines.toArray(new String[0]);
     }
 
+    /**
+     * Get input as int list integer [ ].
+     *
+     * @param day the day
+     * @return the integer [ ]
+     */
     public static Integer[] getInputAsIntList(int day) {
         InputStream inputStream = getInputStream(day);
         ArrayList<Integer> lines = new ArrayList<>();
@@ -87,6 +127,12 @@ public abstract class AdventInputFile {
         return lines.toArray(new Integer[0]);
     }
 
+    /**
+     * Reads and returns the session ID from the file
+     *
+     * @return the session ID
+     * @throws IOException if the file is not found
+     */
     private static String getSessionID() throws IOException {
 
         InputStream in = AdventInputFile.class.getClassLoader().getResourceAsStream("config/session");

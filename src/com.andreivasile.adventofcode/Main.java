@@ -3,11 +3,24 @@ package com.andreivasile.adventofcode;
 
 import com.andreivasile.adventofcode.year2020.days.Day1;
 import com.andreivasile.adventofcode.year2020.days.Day2;
+import com.andreivasile.adventofcode.year2020.days.Day3;
 
+import java.io.IOException;
+
+/**
+ * The type Main.
+ */
 public class Main {
 
-    public static void main(String[] args) {
-//        Day1.printParts();
-        Day2.printParts();
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws IOException the io exception
+     */
+    public static void main(String[] args) throws IOException {
+        new Day1().printParts();
+        new Day2().printParts();
+        new Day3().printParts();
     }
 }
