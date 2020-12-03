@@ -47,7 +47,7 @@ public abstract class AdventInputFile {
     }
 
     public static void saveInputFile(int day) throws IOException {
-        InputStream inputStream = getInputStreamExternal(1);
+        InputStream inputStream = getInputStreamExternal(day);
 
         Path filePath = Path.of(System.getProperty("user.dir") + "/days/day" + day + ".txt");
         Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);

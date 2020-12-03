@@ -29,3 +29,4 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 | Day  | Part One | Part Two | 
 |---|:---:|:---:|
 | ✅ [Day 1: Report Repair](https://github.com/Andyterrify/adventofcode/blob/main/src/com.andreivasile.adventofcode/year2020/days/Day1.java)| 🌟 | 🌟 |
+| ✅ [Day 2: Password Philosophy](https://github.com/Andyterrify/adventofcode/blob/main/src/com.andreivasile.adventofcode/year2020/days/Day2.java)| 🌟 | 🌟 |

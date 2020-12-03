@@ -8,45 +8,33 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 public class Day1 {
-    private static final int day = 1;
+    public static final int day = 1;
+    public static final int year = 2020;
 
-    public static int partOne() {
+    public static String partOne() {
         Integer[] numbers = AdventInputFile.getInputAsIntList(day);
         List<Integer> nums = Arrays.stream(numbers).collect(Collectors.toList());
 
         AtomicInteger output = new AtomicInteger();
-        AtomicInteger firstNumber = new AtomicInteger();
-        AtomicInteger secondNumber = new AtomicInteger();
 
         nums.forEach(
-                i -> nums.stream().parallel().filter(j -> i + j == 2020).findAny().ifPresent(j -> {
-                    output.set(i * j);
-                    firstNumber.set(i);
-                    secondNumber.set(j);
-                }));
-        return output.get();
+                i -> nums.stream().parallel().filter(j -> i + j == 2020).findAny().ifPresent(j -> output.set(i * j)));
+        return String.valueOf(output.get());
     }
 
-    public static int partTwo() {
+    public static String partTwo() {
         Integer[] numbers = AdventInputFile.getInputAsIntList(day);
         List<Integer> nums = Arrays.stream(numbers).collect(Collectors.toList());
 
         AtomicInteger output = new AtomicInteger();
-        AtomicInteger firstNumber = new AtomicInteger();
-        AtomicInteger secondNumber = new AtomicInteger();
-        AtomicInteger thirdNumber = new AtomicInteger();
 
         nums.forEach(
-                i -> nums.forEach(j -> nums.stream().parallel().filter(k -> i + j + k == 2020).findAny().ifPresent(k -> {
-                    output.set(i * j * k);
-                    firstNumber.set(i);
-                    thirdNumber.set(k);
-                })));
-        return output.get();
+                i -> nums.forEach(j -> nums.stream().parallel().filter(k -> i + j + k == 2020).findAny().ifPresent(k -> output.set(i * j * k))));
+        return String.valueOf(output.get());
     }
 
     public static void printParts() {
-        System.out.printf("The output for Day %d Part %d is: %d\n", day, 1, partOne());
-        System.out.printf("The output for Day %d Part %d is: %d\n", day, 2, partTwo());
+        System.out.printf("The output for Day %d Part %d is: %s\n", day, 1, partOne());
+        System.out.printf("The output for Day %d Part %d is: %s\n", day, 2, partTwo());
     }
 }
