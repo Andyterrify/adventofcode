@@ -10,14 +10,14 @@ public interface DayInterface {
      *
      * @return the challenge output
      */
-    Object partOne();
+    String partOne();
 
     /**
      * Part two object.
      *
      * @return the challenge output
      */
-    Object partTwo();
+    String partTwo();
 
     /**
      * Print parts.

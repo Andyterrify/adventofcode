@@ -4,7 +4,13 @@ package com.andreivasile.adventofcode.common;
  * The type Day.
  */
 public class Day implements DayInterface {
-    public int day, year;
+    /**
+     * The Day.
+     */
+    public int day, /**
+     * The Year.
+     */
+    year;
 
     /**
      * Instantiates a new Day.
@@ -18,12 +24,12 @@ public class Day implements DayInterface {
     }
 
     @Override
-    public Object partOne() {
+    public String partOne() {
         return null;
     }
 
     @Override
-    public Object partTwo() {
+    public String partTwo() {
         return null;
     }
 
