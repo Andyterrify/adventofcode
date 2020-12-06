@@ -7,10 +7,8 @@ public class Day implements DayInterface {
     /**
      * The Day.
      */
-    public int day, /**
-     * The Year.
-     */
-    year;
+    public int day, year;
+    public String name;
 
     /**
      * Instantiates a new Day.
@@ -18,9 +16,10 @@ public class Day implements DayInterface {
      * @param day  the day
      * @param year the year
      */
-    public Day(int day, int year) {
+    public Day(int day, int year, String name) {
         this.day = day;
         this.year = year;
+        this.name = name;
     }
 
     @Override
@@ -34,7 +33,7 @@ public class Day implements DayInterface {
     }
 
     public void printParts() {
-        System.out.println("=".repeat(8) + "Day " + day + "=".repeat(8));
+        System.out.println("--- Day " + day + ": " + name + " ---");
         System.out.println("Part 1: " + partOne());
         System.out.println("Part 2: " + partTwo());
         System.out.println();

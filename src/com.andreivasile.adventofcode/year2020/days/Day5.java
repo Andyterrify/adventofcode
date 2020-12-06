@@ -17,7 +17,7 @@ public class Day5 extends Day {
      * Instantiates a new Day.
      */
     public Day5() {
-        super(5, 2020);
+        super(5, 2020, "Binary Boarding");
         seatNumbers = AdventInputFile.getInputAsStringList(day);
     }
 

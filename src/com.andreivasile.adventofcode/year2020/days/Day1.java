@@ -17,7 +17,7 @@ public class Day1 extends Day {
      * Instantiates a new Day 1.
      */
     public Day1() {
-        super(1, 2020);
+        super(1, 2020, "Report Repair");
     }
 
     public String partOne() {

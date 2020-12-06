@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Scanner;
 
 /**
  * The Advent of Code input file grabber
@@ -125,6 +126,25 @@ public abstract class AdventInputFile {
             System.exit(-1);
         }
         return lines.toArray(new Integer[0]);
+    }
+
+    /**
+     * Returns the inputDay separated by a blank like
+     *
+     * @param day The day
+     * @return Blank line separated array of String
+     */
+    public static String[] getInputSeparatedByBlankLine(int day) {
+        FileInputStream inputStream = (FileInputStream) getInputStream(day);
+        ArrayList<String> groups = new ArrayList<>();
+
+        Scanner scanner = new Scanner(inputStream);
+        scanner.useDelimiter("\n\n");
+        while (scanner.hasNext()) {
+            groups.add(scanner.next());
+        }
+
+        return groups.toArray(new String[0]);
     }
 
     /**

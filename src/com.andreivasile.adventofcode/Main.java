@@ -22,5 +22,6 @@ public class Main {
         new Day3().printParts();
         new Day4().printParts();
         new Day5().printParts();
+        new Day6().printParts();
     }
 }

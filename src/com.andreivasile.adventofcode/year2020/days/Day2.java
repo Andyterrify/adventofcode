@@ -14,7 +14,7 @@ public class Day2 extends Day {
      * Instantiates a new Day 2.
      */
     public Day2() {
-        super(2, 2020);
+        super(2, 2020,"Password Philosophy");
     }
 
     public String partOne() {

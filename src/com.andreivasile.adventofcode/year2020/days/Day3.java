@@ -14,7 +14,7 @@ public class Day3 extends Day {
      * Instantiates a new Day 3.
      */
     public Day3() {
-        super(3, 2020);
+        super(3, 2020,"Toboggan Trajectory");
     }
 
     @Override

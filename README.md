@@ -33,3 +33,4 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 | ✅ [Day 3: Toboggan Trajectory](https://github.com/Andyterrify/adventofcode/blob/main/src/com.andreivasile.adventofcode/year2020/days/Day3.java)| 🌟 | 🌟 |
 | ✅ [Day 4: Passport Processing](https://github.com/Andyterrify/adventofcode/blob/main/src/com.andreivasile.adventofcode/year2020/days/Day4.java)| 🌟 | 🌟 |
 | ✅ [Day 5: Binary Boarding](https://github.com/Andyterrify/adventofcode/blob/main/src/com.andreivasile.adventofcode/year2020/days/Day5.java)| 🌟 | 🌟 |
+| ✅ [Day 6: Custom Customs](https://github.com/Andyterrify/adventofcode/blob/main/src/com.andreivasile.adventofcode/year2020/days/Day6.java)| 🌟 | 🌟 |
